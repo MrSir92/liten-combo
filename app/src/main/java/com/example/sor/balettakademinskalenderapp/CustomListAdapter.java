@@ -15,11 +15,11 @@ import java.util.List;
  */
 public class CustomListAdapter extends ArrayAdapter<ClipData.Item> {
 
-    public ListAdapter(Context context, int textViewResourceId) {
+    public CustomListAdapter(Context context, int textViewResourceId) {
         super(context, textViewResourceId);
     }
 
-    public ListAdapter(Context context, int resource, List<ClipData.Item> items) {
+    public CustomListAdapter(Context context, int resource, List<ClipData.Item> items) {
         super(context, resource, items);
     }
 
