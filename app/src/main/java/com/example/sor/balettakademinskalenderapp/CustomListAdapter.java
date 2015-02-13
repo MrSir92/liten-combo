@@ -13,7 +13,7 @@ import java.util.List;
 /**
  * Created by Sor on 2015-02-13.
  */
-public class ListAdapter extends ArrayAdapter<ClipData.Item> {
+public class CustomListAdapter extends ArrayAdapter<ClipData.Item> {
 
     public ListAdapter(Context context, int textViewResourceId) {
         super(context, textViewResourceId);
