@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import java.util.List;
+import java.util.StringTokenizer;
 
 /**
  * Created by Sor on 2015-02-13.
@@ -50,14 +51,14 @@ public class CustomListAdapter extends ArrayAdapter<Course> {
             }
             if (courseDateField != null) {
 
-                courseDateField.setText(p.getCourseDate());
+                courseDateField.setText(String.format("Datum: " + p.getCourseDate()));
             }
             if (courseWeekdayTimeField != null) {
 
-                courseWeekdayTimeField.setText(p.getCourseWeekdayTime());
+                courseWeekdayTimeField.setText("Dag & Tid: " + p.getCourseWeekdayTime());
             }
             if (coursePriceField != null) {
-                coursePriceField.setText(p.getCoursePrice());
+                coursePriceField.setText("Pris: " + p.getCoursePrice());
 
             }
         }
