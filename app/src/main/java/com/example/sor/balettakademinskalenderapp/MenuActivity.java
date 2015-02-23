@@ -4,9 +4,14 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ListView;
+
+import java.util.List;
 
 
 public class MenuActivity extends ActionBarActivity {
+
+    ListView listView;
 
     Course[] activeCourses;
     Section[] sections;
@@ -19,7 +24,7 @@ public class MenuActivity extends ActionBarActivity {
         //instance Courses in Course Array
         activeCourses = new Course[9];
 
-        for(int i = 0; i < 10; i++){
+        for(int i = 0; i < 9; i++){
             activeCourses[i] = new Course(i, "Title", "StartDate", "Weekday", "För mycket");
         }
 
@@ -27,11 +32,15 @@ public class MenuActivity extends ActionBarActivity {
 
         sections = new Section[2];
 
-        for(int i = 0; i < 3; i++){
+        for(int i = 0; i < 2; i++){
             sections[i] = new Section(i, "Section" + String.valueOf(i), activeCourses);
         }
+        listView = (ListView)findViewById(R.id.listView);
 
+        CustomListAdapter listAdapter = new CustomListAdapter(getBaseContext(),
+                R.layout.list_item_view);
 
+        listView.setAdapter(listAdapter);
 
     }
 
