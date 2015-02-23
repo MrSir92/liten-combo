@@ -13,13 +13,13 @@ import java.util.List;
 /**
  * Created by Sor on 2015-02-13.
  */
-public class CustomListAdapter extends ArrayAdapter<ClipData.Item> {
+public class CustomListAdapter extends ArrayAdapter<Course> {
 
     public CustomListAdapter(Context context, int textViewResourceId) {
         super(context, textViewResourceId);
     }
 
-    public CustomListAdapter(Context context, int resource, List<ClipData.Item> items) {
+    public CustomListAdapter(Context context, int resource, List<Course> items) {
         super(context, resource, items);
     }
 
@@ -36,7 +36,7 @@ public class CustomListAdapter extends ArrayAdapter<ClipData.Item> {
 
         }
 
-        ClipData.Item p = getItem(position);
+        Course p = getItem(position);
 
         if (p != null) {
 
@@ -46,18 +46,18 @@ public class CustomListAdapter extends ArrayAdapter<ClipData.Item> {
             TextView coursePriceField = (TextView) v.findViewById(R.id.course_price_text_view);
 
             if (courseTitleField != null) {
-                courseTitleField.setText(p.getText());
+                courseTitleField.setText(p.getCourseTitle());
             }
             if (courseDateField != null) {
 
-                courseDateField.setText(p.getText());
+                courseDateField.setText(p.getCourseDate());
             }
             if (courseWeekdayTimeField != null) {
 
-                courseWeekdayTimeField.setText(p.getText());
+                courseWeekdayTimeField.setText(p.getCourseWeekdayTime());
             }
             if (coursePriceField != null) {
-                coursePriceField.setText(p.getText());
+                coursePriceField.setText(p.getCoursePrice());
 
             }
         }

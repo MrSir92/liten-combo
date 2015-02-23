@@ -1,11 +1,14 @@
 package com.example.sor.balettakademinskalenderapp;
 
+import android.content.ClipData;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ListView;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 
@@ -25,7 +28,7 @@ public class MenuActivity extends ActionBarActivity {
         activeCourses = new Course[9];
 
         for(int i = 0; i < 9; i++){
-            activeCourses[i] = new Course(i, "Title", "StartDate", "Weekday", "För mycket");
+            activeCourses[i] = (new Course(i, "Title", "StartDate", "Weekday", "För mycket"));
         }
 
         //instance Sections in section array
@@ -38,7 +41,7 @@ public class MenuActivity extends ActionBarActivity {
         listView = (ListView)findViewById(R.id.listView);
 
         CustomListAdapter listAdapter = new CustomListAdapter(getBaseContext(),
-                R.layout.list_item_view);
+                R.layout.list_item_view, new ArrayList<Course>(Arrays.asList(activeCourses)));
 
         listView.setAdapter(listAdapter);
 
