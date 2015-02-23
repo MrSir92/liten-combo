@@ -8,10 +8,31 @@ import android.view.MenuItem;
 
 public class MenuActivity extends ActionBarActivity {
 
+    Course[] activeCourses;
+    Section[] sections;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
+
+        //instance Courses in Course Array
+        activeCourses = new Course[9];
+
+        for(int i = 0; i < 10; i++){
+            activeCourses[i] = new Course(i, "Title", "StartDate", "Weekday", "För mycket");
+        }
+
+        //instance Sections in section array
+
+        sections = new Section[2];
+
+        for(int i = 0; i < 3; i++){
+            sections[i] = new Section(i, "Section" + String.valueOf(i), activeCourses);
+        }
+
+
+
     }
 
 

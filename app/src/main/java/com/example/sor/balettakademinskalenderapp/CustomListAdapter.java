@@ -46,17 +46,18 @@ public class CustomListAdapter extends ArrayAdapter<ClipData.Item> {
             TextView coursePriceField = (TextView) v.findViewById(R.id.course_price_text_view);
 
             if (courseTitleField != null) {
-                courseTitleField.setText(p.getId());
+                courseTitleField.setText(p.getText());
             }
             if (courseDateField != null) {
 
-                courseDateField.setText(p.getCategory().getId());
+                courseDateField.setText(p.getText());
             }
             if (courseWeekdayTimeField != null) {
 
-                courseWeekdayTimeField.setText(p.getDescription());
+                courseWeekdayTimeField.setText(p.getText());
             }
-            if (coursePriceField != null){
+            if (coursePriceField != null) {
+                coursePriceField.setText(p.getText());
 
             }
         }
@@ -64,3 +65,4 @@ public class CustomListAdapter extends ArrayAdapter<ClipData.Item> {
         return v;
 
     }
+}
