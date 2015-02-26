@@ -28,7 +28,7 @@ public class MenuActivity extends ActionBarActivity {
         activeCourses = new Course[9];
 
         for(int i = 0; i < 9; i++){
-            activeCourses[i] = (new Course(i, "Title", "StartDate", "Weekday", "För mycket"));
+            activeCourses[i] = (new Course(i, "Title", "StartDate", "Weekday", "100kr"));
         }
 
         //instance Sections in section array
