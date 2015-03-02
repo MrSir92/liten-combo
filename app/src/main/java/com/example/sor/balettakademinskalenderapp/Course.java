@@ -16,18 +16,34 @@ public class Course {
             courseWeekdayTime,
             coursePrice;
 
-    public Course(int id, String title, String date, String weekdayTime, String price){
+    String coursePeriod,
+            courseTeacher,
+            courseLength,
+            courseVacancies,
+            courseDescription;
+
+    public Course(int id, String title, String date, String weekdayTime, String price,
+                  String period, String teacher, String length, String vacancies, String description){
+        //Basic info
         this.id = id;
         courseTitle = title;
         courseDate = date;
         courseWeekdayTime = weekdayTime;
         coursePrice = price;
+
+        //Detailed info
+        coursePeriod = period;
+        courseTeacher = teacher;
+        courseLength = length;
+        courseVacancies = vacancies;
+        courseDescription = description;
     }
 
     int getId(){
         return id;
     }
 
+    //Basic data
     String getCourseTitle(){
         return courseTitle;
     }
@@ -43,4 +59,15 @@ public class Course {
     String getCoursePrice(){
         return coursePrice;
     }
-}
+
+    //Detailed data
+    String getCoursePeriod() { return  coursePeriod;}
+
+    String getCourseTeacher() { return  courseTeacher; }
+
+    String getCourseLength() { return  courseLength; }
+
+    String getCourseVacancies() { return  courseLength; }
+
+    String getCourseDescription() { return  courseDescription; }
+ }

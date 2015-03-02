@@ -28,7 +28,12 @@ public class MenuActivity extends ActionBarActivity {
         activeCourses = new Course[9];
 
         for(int i = 0; i < 9; i++){
-            activeCourses[i] = (new Course(i, "Title", "StartDate", "Weekday", "100kr"));
+            activeCourses[i] = (new Course(i, "Title", "StartDate", "Weekday", "100kr",
+                    "Ti 18:00-21:00", "Anna Andersson", "5", "20", "Afrikansk Dans innehåller " +
+                    "traditionella, kraftfulla rörelser och expressiva danser. " +
+                    "Det är mycket rörelser åt alla håll - som sträcker utåt, " +
+                    "uppåt och samtidigt tungt ner mot jorden. " +
+                    "Stilen passar både dig som har dansat en del och dig som är helt nybörjare."));
         }
 
         //instance Sections in section array
