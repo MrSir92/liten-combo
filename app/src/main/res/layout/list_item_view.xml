@@ -39,7 +39,40 @@
         android:layout_width="wrap_content"
         android:layout_height="30dp"
         android:text="+ Mer info"
-        android:focusable="true"
+        android:focusable="false"
         android:background="#ff408fff"
         android:textColor="#fff" />
+
+
+    <LinearLayout android:id="@+id/toolbar"
+        android:layout_marginBottom="-50dip"
+        android:visibility="gone"
+        android:layout_height="50dip"
+        android:layout_width="fill_parent">
+        <Button android:id="@+id/doSomething1"
+            android:layout_height="50dip"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:layout_width="wrap_content"
+            android:text="Harder"/>
+        <Button android:id="@+id/doSomething2"
+            android:layout_height="50dip"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:layout_width="wrap_content"
+            android:text="Better"/>
+        <Button android:id="@+id/doSomething3"
+            android:layout_height="50dip"
+            android:layout_width="wrap_content"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:text="Faster"/>
+        <Button android:id="@+id/doSomething4"
+            android:layout_height="50dip"
+            android:layout_width="wrap_content"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:text="Stronger"/>
+
+    </LinearLayout>
 </RelativeLayout>

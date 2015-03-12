@@ -5,7 +5,9 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import java.util.List;
@@ -23,6 +25,7 @@ public class CustomListAdapter extends ArrayAdapter<Course> {
     public CustomListAdapter(Context context, int resource, List<Course> items) {
         super(context, resource, items);
     }
+
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
@@ -64,6 +67,31 @@ public class CustomListAdapter extends ArrayAdapter<Course> {
         }
 
         return v;
+    }
+
+    public void loadExtra(int position, View convertView, ViewGroup parent){
+
+
+        ListView list = (ListView)getView(position, convertView, parent);
+
+
+        list = (ListView)list.findViewById(R.id.listView);
+
+        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+            @Override
+            public void onItemClick(AdapterView<?> parent, final View view, int position, long id) {
+
+                View toolbar = view.findViewById(R.id.toolbar);
+
+                // Creating the expand animation for the item
+                ExpandAnimation expandAni = new ExpandAnimation(toolbar, 500);
+
+                // Start the animation on the toolbar
+                toolbar.startAnimation(expandAni);
+            }
+        });
 
     }
+
 }
