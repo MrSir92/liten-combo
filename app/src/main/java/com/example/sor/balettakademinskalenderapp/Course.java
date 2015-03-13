@@ -67,7 +67,7 @@ public class Course {
 
     String getCourseLength() { return  courseLength; }
 
-    String getCourseVacancies() { return  courseLength; }
+    String getCourseVacancies() { return  courseVacancies; }
 
     String getCourseDescription() { return  courseDescription; }
  }
