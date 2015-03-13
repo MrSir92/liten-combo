@@ -5,7 +5,12 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -45,10 +50,39 @@ public class MenuActivity extends ActionBarActivity {
         }
         listView = (ListView)findViewById(R.id.listView);
 
-        CustomListAdapter listAdapter = new CustomListAdapter(getBaseContext(),
+        final CustomListAdapter listAdapter = new CustomListAdapter(getBaseContext(),
                 R.layout.list_item_view, new ArrayList<Course>(Arrays.asList(activeCourses)));
 
         listView.setAdapter(listAdapter);
+
+        //More Info Button in cell
+/*
+        findViewById(R.id.moreInfoButton).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                listAdapter.loadExtra(v.getId(), v, (ViewGroup)v.getParent());
+                listView.invalidate();
+                listAdapter.notifyDataSetChanged();
+            }
+        });
+        */
+
+    }
+
+    public void expandInfo(View v){
+
+        //ListView list = (ListView)v.getParent();
+
+
+        RelativeLayout relativeLayout = (RelativeLayout)v.getParent();
+
+        View toolbar = relativeLayout.findViewById(R.id.toolbar);
+
+        // Creating the expand animation for the item
+        ExpandAnimation expandAni = new ExpandAnimation(toolbar, 500);
+
+        // Start the animation on the toolbar
+        toolbar.startAnimation(expandAni);
 
     }
 

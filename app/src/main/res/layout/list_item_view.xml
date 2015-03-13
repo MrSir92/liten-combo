@@ -39,12 +39,13 @@
         android:layout_width="wrap_content"
         android:layout_height="30dp"
         android:text="+ Mer info"
-        android:focusable="false"
+        android:focusable="true"
+        android:onClick="expandInfo"
         android:background="#ff408fff"
         android:textColor="#fff" />
 
 
-    <LinearLayout android:id="@+id/toolbar"
+    <RelativeLayout android:id="@+id/toolbar"
         android:layout_marginBottom="-50dip"
         android:visibility="gone"
         android:layout_height="50dip"
@@ -74,5 +75,5 @@
             android:focusableInTouchMode="false"
             android:text="Stronger"/>
 
-    </LinearLayout>
+    </RelativeLayout>
 </RelativeLayout>

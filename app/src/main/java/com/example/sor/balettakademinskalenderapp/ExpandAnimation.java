@@ -4,6 +4,7 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.Transformation;
 import android.widget.LinearLayout.LayoutParams;
+import android.widget.RelativeLayout;
 
 
 /**
@@ -14,7 +15,7 @@ import android.widget.LinearLayout.LayoutParams;
  */
 public class ExpandAnimation extends Animation {
     private View mAnimatedView;
-    private LayoutParams mViewLayoutParams;
+    private RelativeLayout.LayoutParams mViewLayoutParams;
     private int mMarginStart, mMarginEnd;
     private boolean mIsVisibleAfter = false;
     private boolean mWasEndedAlready = false;
@@ -28,7 +29,7 @@ public class ExpandAnimation extends Animation {
 
         setDuration(duration);
         mAnimatedView = view;
-        mViewLayoutParams = (LayoutParams) view.getLayoutParams();
+        mViewLayoutParams = (RelativeLayout.LayoutParams) view.getLayoutParams();
 
         // decide to show or hide the view
         mIsVisibleAfter = (view.getVisibility() == View.VISIBLE);
