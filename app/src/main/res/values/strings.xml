@@ -2,5 +2,9 @@
     <string name="app_name">BalettAkademins Kalenderapp</string>
 
     <string name="hello_world">Hello world!</string>
+
     <string name="action_settings">Settings</string>
+    <string name="hello">Hello!</string>
+    <string name="scheduleButton">Lägg till i schema</string>
+    <string name="moreInfoButton">+ Mer info</string>
 </resources>
