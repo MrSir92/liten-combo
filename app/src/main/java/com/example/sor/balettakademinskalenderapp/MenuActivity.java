@@ -33,7 +33,7 @@ public class MenuActivity extends ActionBarActivity {
         activeCourses = new Course[9];
 
         for(int i = 0; i < 9; i++){
-            activeCourses[i] = (new Course(i, "Balett för vuxna", "22 jan 2015", "To 20:00-21:15", "1650kr",
+            activeCourses[i] = (new Course(i, "Balett för vuxna" + i, "22 jan 2015", "To 20:00-21:15", "1650kr",
                     "To 20:00-21:15", "Anna Andersson", "5", "20", "Afrikansk Dans innehåller " +
                     "traditionella, kraftfulla rörelser och expressiva danser. " +
                     "Det är mycket rörelser åt alla håll - som sträcker utåt, " +

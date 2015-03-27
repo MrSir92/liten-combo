@@ -29,6 +29,22 @@ public class CustomListAdapter extends ArrayAdapter<Course> {
         super(context, resource, items);
     }
 
+    //Disables recycling of cells
+
+    @Override
+
+    public int getViewTypeCount() {
+
+        return getCount();
+    }
+
+    @Override
+    public int getItemViewType(int position) {
+
+        return position;
+    }
+
+    //
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
@@ -67,6 +83,7 @@ public class CustomListAdapter extends ArrayAdapter<Course> {
                 coursePriceField.setText("Pris: " + p.getCoursePrice());
             }
 
+
             //Detailed info
             TextView coursePeriodField = (TextView) v.findViewById(R.id.course_period_text_view);
             TextView courseTeacherField = (TextView) v.findViewById(R.id.course_teacher_text_view);
@@ -97,30 +114,6 @@ public class CustomListAdapter extends ArrayAdapter<Course> {
         }
 
         return v;
-    }
-
-    public void loadExtra(int position, View convertView, ViewGroup parent){
-
-
-        ListView list = (ListView)getView(position, convertView, parent);
-
-
-        list = (ListView)list.findViewById(R.id.listView);
-
-        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-
-            @Override
-            public void onItemClick(AdapterView<?> parent, final View view, int position, long id) {
-
-                View toolbar = view.findViewById(R.id.toolbar);
-
-                // Creating the expand animation for the item
-                ExpandAnimation expandAni = new ExpandAnimation(toolbar, 500);
-
-                // Start the animation on the toolbar
-                toolbar.startAnimation(expandAni);
-            }
-        });
     }
 
 }
