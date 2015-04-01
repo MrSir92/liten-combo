@@ -7,4 +7,6 @@
     <string name="hello">Hello!</string>
     <string name="scheduleButton">Lägg till i schema</string>
     <string name="moreInfoButton">+ Mer info</string>
+    <string name="firstButton">Första knappen</string>
+    <string name="secondButton">Andra knappen</string>
 </resources>
